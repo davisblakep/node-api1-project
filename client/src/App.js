@@ -3,6 +3,7 @@ import Homepage from "./components/Homepage";
 import NavBar from "./components/NavBar";
 import UserCardPage from "./components/UserCardPage";
 import EditCardPage from "./components/EditCardPage";
+import CreateUserPage from "./components/CreateUserPage";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
 
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route exact path="/users">
             <UserCardPage users={users} setRefresh={setRefresh} />
+          </Route>
+          <Route exact path="/create-user">
+            <CreateUserPage setRefresh={setRefresh} />
           </Route>
           <Route path="/users/edit/:id">
             <EditCardPage users={users} setRefresh={setRefresh} />
