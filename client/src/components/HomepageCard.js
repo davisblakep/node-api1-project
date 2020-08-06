@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -45,8 +46,9 @@ export default function HomepageCard(props) {
             gutterBottom
             style={{ color: "white" }}
           >
-            API was loaded successfully from server 8080
+            API was loaded successfully from local server 8080
           </Typography>
+          <br />
           <Typography
             variant="h5"
             component="h2"
@@ -56,14 +58,16 @@ export default function HomepageCard(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button
-            size="small"
-            variant="outlined"
-            color="primary"
-            style={{ color: "white" }}
-          >
-            View API Users Data
-          </Button>
+          <Link to="/users">
+            <Button
+              size="small"
+              variant="outlined"
+              color="primary"
+              style={{ color: "white" }}
+            >
+              View API Users Data
+            </Button>
+          </Link>
         </CardActions>
       </Card>
     </div>
