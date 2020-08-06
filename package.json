@@ -1,0 +1,27 @@
+{
+  "name": "node-api1-project",
+  "version": "1.0.0",
+  "description": "Help with the first 3 steps of the assignment tonight: Adding a .gitignore: Run npx gitignore node in your terminal to add a gitignore file that is compatible with node. Here's some info @TL - Megan wrote on .gitignore files: https://www.notion.so/web20notes/Using-a-Gitignore-file-100ced66d4b44f459fdfeae636b55eb7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davisblakep/node-api1-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davisblakep/node-api1-project/issues"
+  },
+  "homepage": "https://github.com/davisblakep/node-api1-project#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

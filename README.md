@@ -1,5 +1,23 @@
 # Node API 1 Project Starter Code
 
+Help with the first 3 steps of the assignment tonight:
+Adding a .gitignore:
+Run npx gitignore node in your terminal to add a gitignore file that is compatible with node.
+Here's some info @TL - Megan wrote on .gitignore files: https://www.notion.so/web20notes/Using-a-Gitignore-file-100ced66d4b44f459fdfeae636b55eb7
+
+---
+
+Adding a package.json:
+Run npm init -y in your terminal to add in package.json with defaults (-y helps bring in the defaults, otherwise it will ask you a bunch of questions)
+Some info on package.json files: https://nodejs.dev/learn/the-package-json-guide
+
+---
+
+Adding nodemon to scripts:
+Add nodemon to your dependencies as a dev dependency (adding -D will cause it to go into a devDependencies object within the package.json): npm i -D nodemon
+Next, go to your package.json and and find the scriptsproperty. You should already have name, version, description, etc. Simply add a new line under test that says: server: "nodemon index.js". This will allow the server to refresh on save instead of having to restart the server. Without nodemon, the server would only run once.
+Some info on nodemon: https://nodemon.io/
+
 ## Topics
 
 - Building a RESTful API.
