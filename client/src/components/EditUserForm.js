@@ -64,7 +64,7 @@ const EditUserForm = (props) => {
   const [formState, setFormState] = useState({
     name: "",
     bio: "",
-    // img: "",
+    img: "Image Feature Coming Soon",
   });
 
   console.log("Logging updated formState in EditValuesForm", formState);
@@ -215,9 +215,11 @@ const EditUserForm = (props) => {
             </FormControl>
             <FormControl required>
               <TextField
+                disabled
                 id="img"
                 name="img"
-                label="Image (HTML LINK)"
+                // label="Image (HTML LINK)"
+
                 value={formState.img}
                 onChange={inputChange}
                 variant="filled"

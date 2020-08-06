@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import axios from "axios";
 
 const useStyles = makeStyles({
   root: {
@@ -29,6 +30,14 @@ export default function UserCardPage(props) {
   const editButton = (id) => {
     return history.push(`/users/edit/${id}`), props.setRefresh(true);
   };
+
+  function submitDelete(id) {
+    axios
+      .delete(`http://localhost:8080/api/users/${id}`)
+      .then(console.log("User deleted."))
+      .catch((err) => console.log(err))
+      .finally(props.setRefresh(true));
+  }
 
   return (
     <div className="userCardPage" style={{ paddingTop: "10%" }}>
@@ -75,7 +84,11 @@ export default function UserCardPage(props) {
                     Edit
                   </Button>
 
-                  <Button size="small" color="secondary">
+                  <Button
+                    onClick={() => submitDelete(user.id)}
+                    size="small"
+                    color="secondary"
+                  >
                     Delete
                   </Button>
                 </CardActions>
