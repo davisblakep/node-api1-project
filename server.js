@@ -1,15 +1,17 @@
 const express = require("express");
+const cors = require("cors");
 const db = require("./database");
 
 const server = express();
 
 server.use(express.json());
+server.use(cors());
 
-server.get("/api", (req, res) => {
+server.get("/api", (req, res, next) => {
   res.json({ message: "Welcome to the API!" });
 });
 
-server.get("/api/users", (req, res) => {
+server.get("/api/users", (req, res, next) => {
   const users = db.getUsers();
   if (users) {
     res.json(users);
@@ -20,7 +22,7 @@ server.get("/api/users", (req, res) => {
   }
 });
 
-server.get("/api/users/:id", (req, res) => {
+server.get("/api/users/:id", (req, res, next) => {
   const id = req.params.id;
   const user = db.getUserById(id);
 
@@ -37,7 +39,7 @@ server.get("/api/users/:id", (req, res) => {
   }
 });
 
-server.post("/api/users", (req, res) => {
+server.post("/api/users", (req, res, next) => {
   const newUser = db.createUser({
     name: req.body.name,
     bio: req.body.bio,
@@ -55,7 +57,7 @@ server.post("/api/users", (req, res) => {
   }
 });
 
-server.put("/api/users/:id", (req, res) => {
+server.put("/api/users/:id", (req, res, next) => {
   const user = db.getUserById(req.params.id);
   if (user) {
     const editUser = db.updateUser(req.params.id, {
@@ -89,7 +91,7 @@ server.put("/api/users/:id", (req, res) => {
   }
 });
 
-server.delete("/api/users/:id", (req, res) => {
+server.delete("/api/users/:id", (req, res, next) => {
   const user = db.getUserById(req.params.id);
   if (user) {
     db.deleteUser(req.params.id);

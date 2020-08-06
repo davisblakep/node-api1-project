@@ -61,6 +61,7 @@ export default function UserCardPage(props) {
             display: "flex",
             justifyContent: "space-evenly",
             alignContent: "center",
+            flexWrap: "wrap",
           }}
         >
           {props.users &&
